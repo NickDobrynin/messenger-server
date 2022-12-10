@@ -4,7 +4,7 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
-    origin: 'https://messenger-client.vercel.app',
+    origin: 'https://messenger-client-production.up.railway.app',
     allowedHeaders: '*',
     credentials: true,
   });
