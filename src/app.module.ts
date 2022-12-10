@@ -6,6 +6,7 @@ import { User } from './modules/users/entities/user.entity';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { AuthModule } from './modules/auth/auth.module';
 import { ChatsModule } from './modules/chats/chats.module';
+import { join } from 'path';
 import { Chat } from './modules/chats/entities/chat.entity';
 
 @Module({
@@ -18,8 +19,8 @@ import { Chat } from './modules/chats/entities/chat.entity';
       entities: [User, Chat],
     }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
-      autoSchemaFile: true,
-      // sortSchema: true,
+      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+      sortSchema: true,
       driver: ApolloDriver,
       cache: 'bounded',
       subscriptions: {
