@@ -20,8 +20,8 @@ import { JwtService } from '@nestjs/jwt';
       entities: [User, Chat],
     }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
-      // autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
-      // sortSchema: true,
+      autoSchemaFile: join(process.cwd(), '/schema.gql'),
+      sortSchema: true,
       driver: ApolloDriver,
       cache: 'bounded',
       subscriptions: {
