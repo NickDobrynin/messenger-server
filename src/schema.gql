@@ -1,0 +1,64 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type AuthResponse {
+  user: User!
+}
+
+type Chat {
+  id: ID!
+  members: [String!]!
+  messages: [Message!]!
+}
+
+type Message {
+  chatId: String!
+  date: String!
+  from: String!
+  id: ID!
+  message: String!
+  to: String!
+}
+
+type Mutation {
+  createChat(to: String!): Chat!
+  sendMessage(chatId: String!, message: String!, to: String!): Chat!
+  signIn(signInInput: SignInInput!): SignInResponse!
+  signUp(signUpInput: SignUpInput!): SignUpResponse!
+}
+
+type Query {
+  auth: AuthResponse!
+  getChats: [Chat!]!
+  getUser: User!
+}
+
+input SignInInput {
+  password: String!
+  username: String!
+}
+
+type SignInResponse {
+  access_token: String!
+  user: User!
+}
+
+input SignUpInput {
+  password: String!
+  username: String!
+}
+
+type SignUpResponse {
+  access_token: String!
+  user: User!
+}
+
+type Subscription {
+  subscribeChats(username: String!): Chat!
+}
+
+type User {
+  id: ID!
+  username: String!
+}
