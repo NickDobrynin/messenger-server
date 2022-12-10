@@ -13,7 +13,7 @@ import { Chat } from './modules/chats/entities/chat.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mongodb',
-      url: 'mongodb+srv://username:username@messengerdb.jnwx7lt.mongodb.net/messengerDB?retryWrites=true&w=majority',
+      url: '//mongo:DmZSyqiDc7JxNt4vWzIB@containers-us-west-164.railway.app:7092',
       synchronize: true,
       useUnifiedTopology: true,
       entities: [User, Chat],
