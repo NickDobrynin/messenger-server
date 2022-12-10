@@ -23,6 +23,7 @@ import { JwtService } from '@nestjs/jwt';
       // autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       // sortSchema: true,
       driver: ApolloDriver,
+      cache: 'bounded',
       subscriptions: {
         'subscriptions-transport-ws': {
           path: '/graphql/subscription',
